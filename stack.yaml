@@ -67,6 +67,6 @@ system-ghc: false
 
 #Whether or not to automatically install GHC when necessary. 
 #Default is false
-install-ghc: false
+install-ghc: true
 #
 ghc-variant: standard
