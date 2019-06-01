@@ -14,16 +14,13 @@ sentences = firstSen ++ secondSen
 --What immortal hand or eye
 --Could frame thy fearful symmetry?
 
-pull :: String -> [String] -> [String]
-pull [] ls = ls
-pull s ls = pull (dropWhile ( /= '\n') . dropWhile (== '\n') $ s) (takeWhile (/= '\n') s : ls)
 
 myLines :: String -> [String]
-myLines s = pull s []
+myLines s = splitSep '\n' s []
 
 splitSep :: Char -> String -> [String] -> [String]
 splitSep sep [] ws = ws
-splitSep sep s ws = splitSep sep (dropWhile (/= sep) . dropWhile (== sep) $ s) (takeWhile (/= sep) s : ws)
+splitSep sep s ws = splitSep sep (dropWhile (== sep) . dropWhile (/= sep) $ s) (ws ++ [takeWhile (/= sep) s])
 
 myWords :: String -> [String]
 myWords s = splitSep ' ' s []

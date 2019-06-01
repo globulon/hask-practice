@@ -1,6 +1,5 @@
 module Main where
 
-import Algebras
 import Date
 import Identity
 import TupleFunctions

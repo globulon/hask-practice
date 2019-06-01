@@ -17,9 +17,7 @@
 #
 # resolver: ./custom-snapshot.yaml
 # resolver: https://example.com/snapshots/2018-01-01.yaml
-resolver: lts-13.16
-compiler: ghc-8.6.4
-compiler-check: match-exact
+resolver: lts-13.23
 
 # User packages to be built.
 # Various formats can be used as shown in the example below.
@@ -50,23 +48,3 @@ packages:
 # Require a specific version of stack, using version ranges
 # require-stack-version: -any # Default
 require-stack-version: ">=1.9"
-#
-# Override the architecture used by stack, especially useful on Windows
-# arch: i386
-arch: x86_64
-#
-# Extra directories used by stack for building
-# extra-include-dirs: [/path/to/dir]
-# extra-lib-dirs: [/path/to/dir]
-#
-# Allow a newer minor version of GHC than the snapshot specifies
-# compiler-check: newer-minor
-#
-# Turn off system GHC
-system-ghc: false
-
-#Whether or not to automatically install GHC when necessary. 
-#Default is false
-install-ghc: true
-#
-ghc-variant: standard
